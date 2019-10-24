@@ -7,27 +7,35 @@ var PORT = 3000;
 
 // Data
 // ===========================================================
-var yoda = {
-  name: "Yoda",
-  role: "Jedi Master",
-  age: 900,
-  forcePoints: 2000
-};
+var characters = [
+    {
+        routeName:"yoda",
+        name: "Yoda",
+        role: "Jedi Master",
+        age: 900,
+        forcePoints: 2000
 
-var darthmaul = {
-  name: "Darth Maul",
-  role: "Sith Lord",
-  age: 200,
-  forcePoints: 1200
-};
+    },
+    {
+        routeName:"darthmaul",
+        name: "Darth Maul",
+        role: "Sith Lord",
+        age: 200,
+        forcePoints: 1200  
+    },
+    {
+        routeName:"ObiWanKenob",
+        name: "Obi Wan Kenob",
+        role: "SEO Specialist",
+        age: 36,
+        forcePoints: 5200
+    }
+];
+
+
 
 // Create one more data entry for the character Obi Wan Kenobi.
-var ObiWanKenob = {
-    name: "Obi Wan Kenob",
-    role: "SEO Specialist",
-    age: 36,
-    forcePoints: 5200
-  };
+
 
 // Enter any values you like for the parameters following the same format as the Yoda and Darth Maul character
 //
