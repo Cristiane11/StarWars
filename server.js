@@ -52,8 +52,13 @@ app.get("/", function(req, res) {
 
 app.get("/characters", function(req, res) {
   var chosen = req.params.characters;
-    console.log(chosen);
-    res.end();
+    for(var i =0; i<characters.length; i ++);
+    if(chosen===characters[i].routeName){
+        res.json(characters[i]);
+        return;
+    }
+    res.send("No character Found!");
+
 });
 
 
@@ -62,9 +67,7 @@ app.get("/characters", function(req, res) {
 //
 
 // YOUR CODE GOES HERE
-app.get("/ObiWanKenob", function(req, res) {
-    res.json(ObiWanKenob);
-});
+
 //
 
 // Listener
