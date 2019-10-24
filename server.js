@@ -52,7 +52,8 @@ app.get("/", function(req, res) {
 
 app.get("/characters", function(req, res) {
   var chosen = req.params.characters;
-    res.json(characters);
+    console.log(chosen);
+    res.end();
 });
 
 
