@@ -22,6 +22,13 @@ var darthmaul = {
 };
 
 // Create one more data entry for the character Obi Wan Kenobi.
+var ObiWanKenob = {
+    name: "Obi Wan Kenob",
+    role: "SEO Specialist",
+    age: 36,
+    forcePoints: 5200
+  };
+
 // Enter any values you like for the parameters following the same format as the Yoda and Darth Maul character
 //
 
@@ -48,7 +55,9 @@ app.get("/darthmaul", function(req, res) {
 //
 
 // YOUR CODE GOES HERE
-//
+app.get("/ObiWanKenob", function(req, res) {
+    res.json(ObiWanKenob);
+});
 //
 
 // Listener
