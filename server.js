@@ -51,15 +51,20 @@ app.get("/", function(req, res) {
   res.send("Welcome to the Star Wars Page!");
 });
 
-app.get("/:characters", function(req, res) {
+app.get("/api/:characters?", function(req, res) {
   var chosen = req.params.characters;
+if (chosen){
+    console.log(chosen);
     for(var i =0; i<characters.length; i ++){
-    if(chosen===characters[i].routeName){
-        res.json(characters[i]);
-        return;
+        if(chosen===characters[i].routeName){
+            res.json(characters[i]);
+            return;
+        }
     }
-}
-    res.send("No character Found!");
+        res.send("No character Found!");
+    }else{
+        res.json(characters);
+    }
 
 });
 
