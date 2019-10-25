@@ -53,11 +53,12 @@ app.get("/", function(req, res) {
 
 app.get("/:characters", function(req, res) {
   var chosen = req.params.characters;
-    for(var i =0; i<characters.length; i ++);
+    for(var i =0; i<characters.length; i ++){
     if(chosen===characters[i].routeName){
         res.json(characters[i]);
         return;
     }
+}
     res.send("No character Found!");
 
 });
