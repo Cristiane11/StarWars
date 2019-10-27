@@ -65,7 +65,7 @@ var characters = [
 // Routes
 // ===========================================================
 app.get("/", function(req, res) {
-  res.send("Welcome to the Star Wars Page!");
+  res.sendFile(path.join(__dirname,"view.html"));
 });
 
 app.get("/api/:characters?", function(req, res) {
