@@ -2,12 +2,13 @@
 // ===========================================================
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path");
 
 var app = express();
 var PORT = 3000;
-var path = require("path");
 
-var app = express()
+
+
  
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -91,11 +92,11 @@ if (chosen){
 
 // Create a new Express route that leads users to the new Obi Wan Kenobi Data
 
-app.post("/api/characters", function(req, res) {
+app.post("/api/new", function(req, res) {
     // req.body hosts is equal to the JSON post sent from the user
     // This works because of our body-parser middleware
     var newcharacter = req.body;
-  
+    newcharacter.routeName = newcharacter.name.replace(/\s+/g,"").toLowerCase();
     console.log(newcharacter);
   
     // We then add the json the user sent to the character array
