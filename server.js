@@ -53,7 +53,20 @@ var characters = [
 
 
 // Create one more data entry for the character Obi Wan Kenobi.
-
+// Create New Characters - takes in JSON input
+app.post("/api/characters", function(req, res) {
+    // req.body hosts is equal to the JSON post sent from the user
+    // This works because of our body-parser middleware
+    var newcharacter = req.body;
+  
+    console.log(newcharacter);
+  
+    // We then add the json the user sent to the character array
+    characters.push(newcharacter);
+  
+    // We then display the JSON to the users
+    res.json(newcharacter);
+  });
 
 // Enter any values you like for the parameters following the same format as the Yoda and Darth Maul character
 //
@@ -67,6 +80,9 @@ var characters = [
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname,"view.html"));
 });
+app.get("/add", function(req, res) {
+    res.sendFile(path.join(__dirname,"add.html"));
+  });
 
 app.get("/api/:characters?", function(req, res) {
   var chosen = req.params.characters;
